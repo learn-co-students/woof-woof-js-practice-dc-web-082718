@@ -47,9 +47,12 @@ function showPupCard(pup) {
     let id = event.currentTarget.dataset.id
     let url = `http://localhost:3000/pups/${id}`
     let body = {isGoodDog: dogStatus}
-    let options = {method: "PATCH", headers:{'Content-Type': 'application/json'},body: JSON.stringify(body)}
+    let options = {method: "PATCH",
+                  headers:{'Content-Type': 'application/json'},
+                  body: JSON.stringify(body)}
     fetch(url, options).then(r=>r.json())
-    showPupCard(pup)
+    event.currentTarget.innerHTML = ""
+    // event.currentTarget.inn
   })
 }
 
